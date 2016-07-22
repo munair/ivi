@@ -1,0 +1,169 @@
+/*----------------------------------------------
+--Banner
+-----------------------------------------------  */
+
+.section-banner {
+	position: relative;
+	display: table;
+	width: 100%;
+	height: 100vh;
+	margin: 0 auto;
+	text-align: center;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+	text-transform: uppercase;
+	font-family: Lato;
+	font-weight: 100;
+	font-size: 36px;
+	font-size: calc(1.25em + 25%);
+	line-height: 44px;
+	line-height: calc(1.75em + 25%);
+	color: $color-grey;
+	overflow: hidden;
+	pointer-events: none;
+	@include overlay($color-light, 0.8);
+	@media (min-width: $mq-small) {
+		font-size: 36px;
+		font-size: calc(2.75em + 25%);
+		line-height: 44px;
+		line-height: calc(1.5em + 25%);
+	}
+	.stack-1 {
+		z-index: 5;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		.centering {
+			position: relative;
+			display: table;
+			height: 100%;
+			min-width: 100%;
+	                .statement {
+				position: relative;
+				display: table-cell;
+				vertical-align: middle;
+	                	.push {
+					position: relative;
+					opacity: 0;
+					width: 80%;
+					margin: 0 auto;
+	                        	@include animation(push ease-out 27s 2s infinite forwards);
+	                	}
+	                }
+		}
+	}
+	.stack-2 {
+		z-index: 6;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		.centering {
+			position: relative;
+			display: table;
+			height: 100%;
+			min-width: 100%;
+	                .statement {
+				position: relative;
+				display: table-cell;
+				vertical-align: middle;
+	                	.left {
+					position: relative;
+					opacity: 0;
+					min-width: 100%;
+	                        	@include animation(left ease-out 27s 11s infinite forwards);
+	                	}
+	                	.right {
+					position: relative;
+					opacity: 0;
+	                        	@include animation(right ease-out 27s 11s infinite forwards);
+	                	}
+	                }
+		}
+	}
+	.stack-3 {
+		z-index: 7;
+		position: absolute;
+		height: 100%;
+		min-width: 100%;
+		.centering {
+			position: relative;
+			display: table;
+			height: 100%;
+			width: 100%;
+	                .statement {
+				position: relative;
+				display: table-cell;
+				vertical-align: middle;
+	                	.up {
+					position: relative;
+					opacity: 0;
+	                	        @include animation(up ease-out 27s 20s infinite forwards);
+	        	        }
+		                .down {
+					position: relative;
+					opacity: 0;
+	                        	@include animation(down ease-out 27s 20s infinite forwards);
+	                	}
+	                }
+		}
+	}
+ 	ul.keyframe-slider {
+		li {
+			@include bg-abs;
+			background-attachment: fixed;
+			opacity: 0;
+			@include animation(fade-out 27s infinite both);
+			background-image: $injecting-p;
+			@media (min-width: $mq-med) {
+				background-image: $injecting-l;
+			}
+		}
+	 	li:nth-child(2) {
+			background-image: $viles-p;
+			@include animation-delay(18s);
+			@media (min-width: $mq-med) {
+				background-image: $viles-l;
+			}
+		}
+		li:nth-child(3) {
+			background-image: $office-p;
+			@include animation-delay(9s);
+			@media (min-width: $mq-med) {
+				background-image: $office-l;
+			}
+		}
+	}
+	.yellow-button {
+		@include animation(fade-in ease-in-out 1s 1s both);
+		position: relative;
+		display: table;
+		overflow: hidden;
+                border: 1px solid $color-dark;
+                border-radius: 50px;
+                background-color: $color-yellow;
+                margin: 1em auto;
+                width: 100px;
+                height: 100px;
+		pointer-events: auto;
+                transition: ease-out 0.5s;
+		p {
+			display: table-cell;
+			position: relative;
+			vertical-align: middle;
+                	font-family: Lato;
+			font-weight: 900;
+			font-size: 15px;
+			line-height: 44px;
+                	text-align: center;
+                	color: $color-dark;
+		}
+	}
+	.yellow-button:after {
+		content: "";
+		background-image: linear-gradient(180deg,#fff 0,hsla(0,0%,100%,0));
+	}
+	.yellow-button:hover {
+		p {
+			@include animation(rubber-band ease-in-out 1s);
+		}
+	}
+}

@@ -1,0 +1,96 @@
+/*----------------------------------------------   
+--Radial Gradient
+-----------------------------------------------  */
+@mixin radial-gradient($from, $to) {
+    background: -moz-radial-gradient(center, circle cover, $from 0%, $to 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, $from), color-stop(100%, $to));
+    background: -webkit-radial-gradient(center, circle cover, $from 0%, $to 100%);
+    background: -o-radial-gradient(center, circle cover, $from 0%, $to 100%);
+    background: -ms-radial-gradient(center, circle cover, $from 0%, $to 100%);
+    background: radial-gradient(center, circle cover, $from 0%, $to 100%);
+    background-color: $from;
+}
+
+/*----------------------------------------------   
+--Banner Bgs
+-----------------------------------------------  */
+@mixin bg-abs{
+	height: 100% !important;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position:	50%;
+	z-index:	0;
+}
+
+/*----------------------------------------------   
+--overlay psedu
+-----------------------------------------------  */
+@mixin overlay($bgColor: #fff, $bgOpacity: 0.6){
+	&:after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba($bgColor, $bgOpacity);
+	z-index: 0;
+	}
+	
+	.v-center{
+		position:	relative;
+		z-index:	2;
+	}
+}
+
+@mixin programs($bgImage, $overlayColor) {
+                @include animation(fade-in ease-in-out 1s 1s both);
+                position: relative;
+                display: table;
+                background-image: $bgImage;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position:    50%;
+                margin: 1em auto;
+                width: 100%;
+                max-width: 960px;
+                min-height: 300px;
+                max-height: 600px;
+                p {
+                        display: table-cell;
+                        position: relative;
+                        vertical-align: middle;
+                        font-family: Lato;
+                        font-weight: 900;
+                        font-size: 2em;
+                        text-align: center;
+                        text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+                        text-transform: uppercase;
+                        color: $color-light;
+			opacity: 1;
+                	transition: ease-out 1.5s;
+                }
+	        &:hover {
+	                p {
+	                        opacity: 0;
+	                }
+	        }
+	        &:after {
+	                content: '';
+	                position: absolute;
+	                top: 0;
+	                left: 0;
+	                height: 100%;
+	                width: 100%;
+	                border: 1px solid $color-dark;
+	                background-image: linear-gradient(180deg, rgba($overlayColor, 0.65) 0%, rgba($overlayColor, 0) 50%, rgba($overlayColor, 0.65) 100%);
+	                z-index: 0;
+	                transition: ease-out 1.5s;
+	        }
+	        &:hover:after, &:focus:after {
+	                background-color: rgba($overlayColor,0.25);
+	        }
+}

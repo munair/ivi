@@ -1,0 +1,62 @@
+/*----------------------------------------------
+--Page Styling
+-----------------------------------------------  */
+
+.page-header {
+	padding: 0;
+	margin: 0;
+	border: none;
+	h1 {
+		font-family: Lato;
+		font-weight: 100;
+		font-size: 52px;
+    		font-style: normal;
+        	text-align: left;
+        	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+	        text-transform: uppercase;
+    		line-height: 65px;
+    		letter-spacing: -1px;
+		color: $color-blue;
+	}
+}
+
+.content {
+	width: 80%;
+	margin: 1em auto;
+	img {
+		width: 100%;
+		border: 1px solid $color-grey;
+		margin: 0.5em auto;
+	}
+	h2 {
+		font-family: Lato;
+		font-weight: 100;
+		font-size: 42px;
+    		font-style: normal;
+        	text-align: left;
+        	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+	        text-transform: uppercase;
+    		line-height: 55px;
+    		letter-spacing: -1px;
+		color: $color-blue;
+	}
+	ul {
+		margin-left: 1.2em;
+	}
+	p {
+		margin: 0.5em auto;
+	}
+	table {
+		font-size: 0.5em;
+	}
+	.pdf-icon {
+		width: initial;
+	}
+	.weighted {
+		font-weight: 900;
+	}
+	a {
+		color: $color-blue;
+	}
+}
+

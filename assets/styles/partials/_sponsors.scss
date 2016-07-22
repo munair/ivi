@@ -1,0 +1,26 @@
+/*----------------------------------------------
+--Sponsors
+-----------------------------------------------  */
+
+.sponsors {
+	padding: 4em 2em;
+	background-color: $color-light;
+	color: $color-grey;
+	text-align: center;
+	
+	img {
+		margin: 1em auto;
+		width: 95%;
+		max-width: 200px;
+	}
+	
+	img:hover {
+		@include animation(rubber-band ease-in-out 3s);
+	}
+
+	h1 {
+		color: $color-blue;
+	}
+}
+
+

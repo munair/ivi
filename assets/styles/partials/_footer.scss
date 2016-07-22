@@ -1,0 +1,90 @@
+/*----------------------------------------------
+--Footer
+-----------------------------------------------  */
+
+.section-footer {
+	position: relative;
+	display: table;
+	border-top: 2px solid $color-blue;
+	width: 100%;
+	margin: 0 auto;
+	padding: 2em 0;
+	text-transform: uppercase;
+	color: $color-light;
+        font-family: Lato;
+        font-size: 0.8em;
+        font-weight: 100;
+        font-style: normal;
+        line-height: 1.1em;
+        letter-spacing: -0.02em;
+	@include overlay($color-dark, 0.9);
+	.v-center {
+		display: table-cell;
+		vertical-align: middle;
+		position: relative;
+		z-index: 4;
+		padding: 0 5%;
+		h1 {
+			@include animation(fade-in ease-in-out 2s 0.5s both);
+		}
+	}
+	.spacer {
+		min-height: 1em;
+	}
+	p {
+		font-size: 90%;
+		@include animation(fade-in ease-in-out 2s 1s both);
+	}
+	h2 {
+		font-weight: 900;
+		font-size: 120%;
+		margin: 0.5em 0;
+		padding: 1em 0;
+		@include animation(fade-in ease-in-out 2s 1s both);
+	}
+	img {
+		transition: all ease-out 4s;
+		width: 78px;
+		border: 1px solid white;
+		border-radius: 40px;
+	}
+	span{
+		margin-bottom: 1em;
+	}
+	span:hover {
+		@include animation(rubber-band ease-in-out 3s);
+	}
+	img:hover {
+		transform: rotate(-90deg);
+	}
+	a {
+		text-decoration: none;
+		font-weight: 100;
+	}
+ 	ul.keyframe-slider {
+                li {
+                        @include bg-abs;
+                        background-attachment: fixed;
+                        opacity: 0;
+                        @include animation(fade-out 27s infinite both);
+                        background-image: $nepal-shot-p;
+                        @media (min-width: $mq-med) {
+                                background-image: $nepal-shot-l;
+                        }
+                }
+                li:nth-child(2) {
+                        background-image: $nepal-shot-p;
+                        @include animation-delay(18s);
+                        @media (min-width: $mq-med) {
+                                background-image: $nepal-shot-l;
+                        }
+                }
+                li:nth-child(3) {
+                        background-image: $viles-p;
+                        @include animation-delay(9s);
+                        @media (min-width: $mq-med) {
+                                background-image: $viles-l;
+                        }
+                }
+	}
+}

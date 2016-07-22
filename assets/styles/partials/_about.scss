@@ -1,0 +1,46 @@
+/*----------------------------------------------
+--About
+-----------------------------------------------  */
+
+.section-about {
+	margin: 2em 0;
+
+	h1 { text-align: center; color: $color-blue; }
+
+	p { text-align: center; color: $color-grey; }
+
+	.row { margin: 2em 0 }
+
+        .discover {
+		@include programs($program-1, $color-rose);
+        }
+	
+        .develop {
+		@include programs($program-2, $color-orange);
+        }
+	
+        .deliver {
+		@include programs($program-3, $color-blue);
+        }
+	
+        .sustain {
+		@include programs($program-4, $color-yellow);
+        }
+	.clear-button {
+	                margin: 1em auto;
+	                border: 1px solid $color-dark;
+	                border-radius: 1px;
+	                background-color: transparent;
+	                font-family: Lato;
+	                text-align: center;
+	                color: $color-dark;
+	                transition: ease-out 0.5s;
+	                width: 10em;
+	                height: 2em;
+	}
+	.clear-button:hover {
+	                background-color: $color-yellow;
+	                border: 1px solid $color-dark;
+	                color: $color-dark;
+	}
+}

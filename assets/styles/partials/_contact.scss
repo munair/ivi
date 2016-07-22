@@ -1,0 +1,20 @@
+/*----------------------------------------------
+--Contact
+-----------------------------------------------  */
+
+.section-contact {
+	position: relative;
+	display: table;
+	width: 100%;
+	margin: 2em auto;
+	text-align: center;
+	color: $color-grey;
+	
+	h1 {
+		color: $color-blue;
+	}
+
+	img {
+		width: 100px;
+	}
+}
